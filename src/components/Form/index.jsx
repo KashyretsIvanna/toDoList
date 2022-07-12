@@ -16,6 +16,8 @@ class Form extends Component {
     this.reset();
   };
 
+
+
   reset = () => {
     this.setState({ value: '' });
   };
@@ -33,6 +35,7 @@ class Form extends Component {
             className={styles.input}
             placeholder="What do you want to do?"
             onChange={e => this.handleChange(e)}
+            value={this.state.value}
             type="text"
           />
           <button className={styles.button} type="submit">

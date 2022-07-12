@@ -13,13 +13,13 @@ class App extends Component {
     filter: '',
   };
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (this.state.filter !== prevState.filter) {
-  //     console.log('Filter updated');
-  //   }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.filter !== prevState.filter) {
+      console.log('Filter updated');
+    }
 
-  //   localStorage.setItem('todo', JSON.stringify(this.state.todo));
-  // }
+    localStorage.setItem('todo', JSON.stringify(this.state.todo));
+  }
 
   handleDeleteItem = id => {
     this.setState(prev => ({
