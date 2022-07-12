@@ -13,6 +13,14 @@ class App extends Component {
     filter: '',
   };
 
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (this.state.filter !== prevState.filter) {
+  //     console.log('Filter updated');
+  //   }
+
+  //   localStorage.setItem('todo', JSON.stringify(this.state.todo));
+  // }
+
   handleDeleteItem = id => {
     this.setState(prev => ({
       todo: prev.todo.filter(el => el.id !== id),
@@ -34,18 +42,16 @@ class App extends Component {
   handleSubmit = value => {
     let nanoId = nanoid();
     this.setState(prev => ({
-      todo: [prev.todo, { id: nanoId, value: value, status: false }],
+      todo: [...prev.todo, { id: nanoId, value: value, status: false }],
     }));
   };
 
   handleFilteredItems = () => {
-    let filtered = this.state.todo.filter(el => {
-      return el.value
-        .toLocaleLowerCase()
-        .includes(this.state.filter.toLocaleLowerCase());
-    });
-    return filtered;
+    return (this.state.todo.filter(el =>{return (el.value.toLowerCase().includes(this.state.filter.toLowerCase()))}
+        ))
   };
+
+  
 
   render() {
     const { todo } = this.state;
