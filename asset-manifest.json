@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-homework-template/static/css/main.9a00921d.css",
-    "main.js": "/react-homework-template/static/js/main.d801448b.js",
-    "static/media/square.webp": "/react-homework-template/static/media/square.5c902db806b344f78ef7.webp",
-    "static/media/point.webp": "/react-homework-template/static/media/point.9449c70bfed05551f3b6.webp",
-    "index.html": "/react-homework-template/index.html",
-    "main.9a00921d.css.map": "/react-homework-template/static/css/main.9a00921d.css.map",
-    "main.d801448b.js.map": "/react-homework-template/static/js/main.d801448b.js.map"
+    "main.css": "/toDoList/static/css/main.9a00921d.css",
+    "main.js": "/toDoList/static/js/main.89a32586.js",
+    "static/media/square.webp": "/toDoList/static/media/square.5c902db806b344f78ef7.webp",
+    "static/media/point.webp": "/toDoList/static/media/point.9449c70bfed05551f3b6.webp",
+    "index.html": "/toDoList/index.html",
+    "main.9a00921d.css.map": "/toDoList/static/css/main.9a00921d.css.map",
+    "main.89a32586.js.map": "/toDoList/static/js/main.89a32586.js.map"
   },
   "entrypoints": [
     "static/css/main.9a00921d.css",
-    "static/js/main.d801448b.js"
+    "static/js/main.89a32586.js"
   ]
 }
