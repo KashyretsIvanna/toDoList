@@ -3,6 +3,10 @@ import Form from './Form';
 import ItemList from './ItemList';
 import { nanoid } from 'nanoid';
 import Filter from './Filter';
+import Modal from './Modal';
+import Clock from './Clock';
+import styles from '../components/index.module.css';
+import cr from "../components/icons/pngwing.com.png"
 
 class App extends Component {
   state = {
@@ -11,14 +15,27 @@ class App extends Component {
       { id: 'id-2', value: 'Spiner', status: false },
     ],
     filter: '',
+    modal: false,
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.filter !== prevState.filter) {
-      console.log('Filter updated');
-    }
+  toggleModal = () => {
+    this.setState(prev => ({ modal: !prev.modal }));
+  };
 
-    localStorage.setItem('todo', JSON.stringify(this.state.todo));
+  componentDidMount() {
+    console.log('Component did mount');
+
+    const parserTodos = JSON.parse(localStorage.getItem('todo'));
+    if (parserTodos) {
+      this.setState({ todo: parserTodos });
+    }
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log('App was updated');
+    if (this.state.todo !== prevState.todo) {
+      console.log('Todo was updated');
+      localStorage.setItem('todo', JSON.stringify(this.state.todo));
+    }
   }
 
   handleDeleteItem = id => {
@@ -55,17 +72,26 @@ class App extends Component {
   render() {
     const { todo } = this.state;
     return (
-      <div
-        style={{
-          height: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101',
-          flexDirection: 'column',
-        }}
-      >
+      <div className={styles.app}>
+        <button
+          className={styles.button}
+          type="button"
+          onClick={() => this.toggleModal()}
+        >
+          Show time
+        </button>
+        {this.state.modal && (
+          <Modal onToggleModal={this.toggleModal}>
+            <Clock />
+            <button
+              className={styles.cross}
+              onClick={() => this.toggleModal()}
+              type="button"
+            >
+              <img src={cr}/>
+            </button>
+          </Modal>
+        )}
         <Form onSubmit={this.handleSubmit} />
         <Filter onGetFilter={this.handleGetFilter} />
         <ItemList

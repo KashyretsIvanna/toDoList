@@ -9,9 +9,11 @@
   box-sizing: border-box;
   margin-bottom: 10px;
   width: 200px;
-  background-color: lightgray;
+  background-color: gray;
   border: none;
   border-radius: 15px;
+  box-shadow: inset 5px 3px  7px  black ;
+  
 }
 .button {
   padding: 10px;
@@ -19,6 +21,12 @@
   margin-bottom: 10px;
   width: 200px;
   border: none;
+  background-color: gray;
+  box-shadow: 2px 4px 7px;
 
   border-radius: 15px;
+}
+
+.button:hover{
+  box-shadow: 2px 2px 7px;
 }

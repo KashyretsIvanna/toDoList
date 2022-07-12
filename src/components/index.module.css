@@ -1,0 +1,43 @@
+.button {
+  
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 200px;
+    border: none;
+    background-color: gray;
+    box-shadow: 2px 4px 7px;
+  
+    border-radius: 15px;
+  
+}
+.button:hover{
+  box-shadow: 2px 2px 7px;
+}
+
+.app {
+ width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: #010100;
+  flex-direction: column;
+  background-color: darkslategray;
+  height: max-content;
+  padding: 200px 0;
+  
+}
+.cross{
+  position:relative;
+  width: 40px;
+  border: none;
+  
+  top: -20px;
+  left: -100px;
+  background-color: rgba(255, 222, 173, 0);
+}
+
+.cross img{
+  width: inherit;
+}
