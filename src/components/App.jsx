@@ -88,7 +88,7 @@ class App extends Component {
               onClick={() => this.toggleModal()}
               type="button"
             >
-              <img src={cr}/>
+              <img src={cr} alt="img"/>
             </button>
           </Modal>
         )}
