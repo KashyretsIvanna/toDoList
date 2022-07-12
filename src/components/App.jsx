@@ -47,11 +47,10 @@ class App extends Component {
   };
 
   handleFilteredItems = () => {
-    return (this.state.todo.filter(el =>{return (el.value.toLowerCase().includes(this.state.filter.toLowerCase()))}
-        ))
+    return this.state.todo.filter(el => {
+      return el.value.toLowerCase().includes(this.state.filter.toLowerCase());
+    });
   };
-
-  
 
   render() {
     const { todo } = this.state;
